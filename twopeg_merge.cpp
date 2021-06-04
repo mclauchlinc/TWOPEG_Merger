@@ -19,6 +19,13 @@ This lines up weights with the proper events by their thrown electron momentum
 
 //Main body
 int main(int argc, char **argv){
+    // Check to make sure there is a reconstructed and weight file given
+    // If not give useage and exit so it doesn't segfault
+    if (argc < 3) {
+      std::cerr << "To use:\ntwopeg_merge <reconstructed file> <weight file>\n\n";
+      exit(1);
+    }
+
 	std::cout<<"Begin Merger of ";
 
 	//Take in the output sim file and the corresponding weight file
