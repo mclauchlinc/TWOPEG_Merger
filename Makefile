@@ -9,12 +9,10 @@ OBJS = $(SRCS:.cpp=.o)
 all: twopeg_merge
 
 %.o: %.cpp
-	$(CXX) $(ROOTCFLAGS) $(ROOTINCLUDE) -c $< -o $@
+	$(CXX) -std=c++0x $(ROOTCFLAGS) $(ROOTINCLUDE) -c $< -o $@
 
 twopeg_merge: $(OBJS)
-	$(CXX) $(ROOTCFLAGS) $(ROOTINCLUDE) -o $@ $^ $(ROOTLIBS)
-
+	$(CXX) -std=c++0x $(ROOTCFLAGS) $(ROOTINCLUDE) -o $@ $^ $(ROOTLIBS)
 
 clean:
 	rm functions.o twopeg_merge.o twopeg_merge
-	
